@@ -1,0 +1,5 @@
+*.crx
+*.xpi
+*.zip
+webextension/_locales/values
+webextension/_locales/xyz

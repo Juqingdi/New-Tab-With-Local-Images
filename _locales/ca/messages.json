@@ -1,0 +1,167 @@
+{
+   "bg_header": {
+      "message": "Imatge de fons de la pàgina:"
+   },
+   "bg_remove": {
+      "message": "Suprimeix"
+   },
+   "bg_set": {
+      "message": "Estableix"
+   },
+   "changelog_label": {
+      "message": "Novetats"
+   },
+   "contextmenu_block": {
+      "message": "Elimina aquest mosaic"
+   },
+   "contextmenu_edit": {
+      "message": "Edita aquest mosaic"
+   },
+   "contextmenu_options": {
+      "message": "Paràmetres de les Eines de pestanyes noves"
+   },
+   "contextmenu_pin": {
+      "message": "Fixa aquest mosaic"
+   },
+   "contextmenu_unpin": {
+      "message": "Desfixa aquest mosaic"
+   },
+   "donate": {
+      "message": "Feu un donatiu…"
+   },
+   "donate_label": {
+      "message": "Les Eines de pestanyes noves es financien amb donatius dels usuaris."
+   },
+   "extensionDescription": {
+      "message": "Personalitza la pàgina de pestanya nova. Podeu afegir-hi més mosaics, el llançador de l’inici del Firefox o una imatge de fons. També podeu canviar els títols i les imatges dels mosaics."
+   },
+   "extensionName": {
+      "message": "Eines de pestanyes noves"
+   },
+   "github": {
+      "message": "Les Eines de pestanyes noves al GitHub"
+   },
+   "newtab_pageTitle": {
+      "message": "Pestanya nova"
+   },
+   "newtab_undo_closeTooltip": {
+      "message": "Amaga"
+   },
+   "newtab_undo_removedLabel": {
+      "message": "S'ha eliminat la miniatura."
+   },
+   "newtab_undo_restoreButton": {
+      "message": "Restaura-les totes"
+   },
+   "newtab_undo_undoButton": {
+      "message": "Desfés"
+   },
+   "newversion": {
+      "message": "Les Eines de pestanyes noves s’han actualitzat a la versió $1. Aquestes eines són gratuïtes, però agraïm els donatius!"
+   },
+   "options_columns": {
+      "message": "Columnes"
+   },
+   "options_foreground_opacity": {
+      "message": "Opacitat del primer pla"
+   },
+   "options_grid_margin": {
+      "message": "Marge de la graella"
+   },
+   "options_grid_spacing": {
+      "message": "Espaiament de la graella"
+   },
+   "options_header": {
+      "message": "Paràmetres:"
+   },
+   "options_historytiles": {
+      "message": "Mosaics de l’historial de navegació"
+   },
+   "options_launcher_hidden": {
+      "message": "No ho mostris"
+   },
+   "options_recent": {
+      "message": "Pestanyes tancades recentment"
+   },
+   "options_rows": {
+      "message": "Files"
+   },
+   "options_size_large": {
+      "message": "Gran"
+   },
+   "options_size_medium": {
+      "message": "Mitjà"
+   },
+   "options_size_small": {
+      "message": "Petit"
+   },
+   "options_theme": {
+      "message": "Tema"
+   },
+   "options_theme_dark": {
+      "message": "Tema fosc"
+   },
+   "options_theme_light": {
+      "message": "Tema clar"
+   },
+   "options_thumb_titlesize": {
+      "message": "Mida dels títols dels mosaics"
+   },
+   "pin_url_button": {
+      "message": "Afegeix"
+   },
+   "pin_url_header": {
+      "message": "Afegeix un mosaic:"
+   },
+   "pin_url_placeholder": {
+      "message": "Escriviu o seleccioneu un URL"
+   },
+   "recently_closed_tabs": {
+      "message": "Pestanyes tancades recentment:"
+   },
+   "tile_block": {
+      "message": "Suprimeix aquest lloc"
+   },
+   "tile_header": {
+      "message": "Mosaics:"
+   },
+   "tile_pin": {
+      "message": "Fixa aquest lloc en aquesta posició"
+   },
+   "tile_savedthumb_set": {
+      "message": "Estableix"
+   },
+   "tile_selection_next_tooltip": {
+      "message": "Mosaic següent"
+   },
+   "tile_selection_nextrow_tooltip": {
+      "message": "Fila següent"
+   },
+   "tile_selection_previous_tooltip": {
+      "message": "Mosaic anterior"
+   },
+   "tile_selection_previousrow_tooltip": {
+      "message": "Fila anterior"
+   },
+   "tile_thumbnail_bgcolor": {
+      "message": "Color del fons:"
+   },
+   "tile_thumbnail_remove": {
+      "message": "Elimina"
+   },
+   "tile_title_label": {
+      "message": "Títol:"
+   },
+   "tile_title_placeholder": {
+      "message": "Escriviu un títol nou per al mosaic"
+   },
+   "tile_title_set": {
+      "message": "Estableix"
+   },
+   "tile_unpin": {
+      "message": "No fixis aquest lloc"
+   },
+   "tileurl_empty": {
+      "message": "Mosaic buit"
+   }
+}

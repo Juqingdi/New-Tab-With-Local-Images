@@ -1,0 +1,179 @@
+{
+   "action_captureThumbnail": {
+      "message": "Oldal előnézeti képének rögzítése"
+   },
+   "bg_header": {
+      "message": "Oldal háttérképe:"
+   },
+   "bg_remove": {
+      "message": "Eltávolítás"
+   },
+   "bg_set": {
+      "message": "Beállítás"
+   },
+   "changelog_label": {
+      "message": "Mi változott?"
+   },
+   "contextmenu_block": {
+      "message": "Csempe eltávolítása"
+   },
+   "contextmenu_edit": {
+      "message": "Csempe szerkesztése"
+   },
+   "contextmenu_options": {
+      "message": "New Tab Tools beállítások"
+   },
+   "contextmenu_pin": {
+      "message": "Csempe rögzítése"
+   },
+   "contextmenu_unpin": {
+      "message": "Csempe rögzítésének feloldása"
+   },
+   "donate": {
+      "message": "Adományozás…"
+   },
+   "donate_label": {
+      "message": "A New Tab Tools-t a felhasználói adományok finanszírozzák."
+   },
+   "extensionDescription": {
+      "message": "Személyre szabja az új lap oldalt. Hozzáadhat további csempéket, a Firefox start gyorsindítóját, vagy egy háttérképet. Megadhat új csempeképeket és feliratokat."
+   },
+   "extensionName": {
+      "message": "New Tab Tools"
+   },
+   "filter_button": {
+      "message": "Szűrés…"
+   },
+   "github": {
+      "message": "New Tab Tools a GitHub-on"
+   },
+   "newtab_pageTitle": {
+      "message": "Új lap"
+   },
+   "newtab_undo_closeTooltip": {
+      "message": "Elrejtés"
+   },
+   "newtab_undo_removedLabel": {
+      "message": "Bélyegkép eltávolítva."
+   },
+   "newtab_undo_restoreButton": {
+      "message": "Összes visszaállítása"
+   },
+   "newtab_undo_undoButton": {
+      "message": "Visszavonás"
+   },
+   "newversion": {
+      "message": "A New Tab Tools frissítve lett a $1 verzióra. A New Tab Tools ingyenes, de minden támogatást szívesen fogadok!"
+   },
+   "options_columns": {
+      "message": "Oszlopok"
+   },
+   "options_foreground_opacity": {
+      "message": "Előtér átlátszatlansága"
+   },
+   "options_grid_margin": {
+      "message": "Rács margója"
+   },
+   "options_grid_spacing": {
+      "message": "Rács térköze"
+   },
+   "options_header": {
+      "message": "Beállítások:"
+   },
+   "options_historytiles": {
+      "message": "Csempék a böngészési előzményeiből"
+   },
+   "options_launcher_hidden": {
+      "message": "Ne mutassa"
+   },
+   "options_locked": {
+      "message": "Csempék mozgatásának megakadályozása"
+   },
+   "options_recent": {
+      "message": "Nemrég bezárt lapok"
+   },
+   "options_rows": {
+      "message": "Sorok"
+   },
+   "options_size_large": {
+      "message": "Nagy"
+   },
+   "options_size_medium": {
+      "message": "Közepes"
+   },
+   "options_size_small": {
+      "message": "Kicsi"
+   },
+   "options_theme": {
+      "message": "Téma"
+   },
+   "options_theme_dark": {
+      "message": "Sötét téma"
+   },
+   "options_theme_light": {
+      "message": "Világos téma"
+   },
+   "options_thumb_titlesize": {
+      "message": "A csempe címének mérete"
+   },
+   "pin_url_button": {
+      "message": "Hozzáadás"
+   },
+   "pin_url_header": {
+      "message": "Csempe hozzáadása:"
+   },
+   "pin_url_placeholder": {
+      "message": "Adjon meg vagy válasszon egy webcímet"
+   },
+   "recently_closed_tabs": {
+      "message": "Nemrég bezárt lapok:"
+   },
+   "tile_block": {
+      "message": "Eltávolítás"
+   },
+   "tile_header": {
+      "message": "Csempék:"
+   },
+   "tile_pin": {
+      "message": "Webhely rögzítése ezen a helyen"
+   },
+   "tile_savedthumb_label": {
+      "message": "Mentett kép:"
+   },
+   "tile_savedthumb_set": {
+      "message": "Beállítás"
+   },
+   "tile_selection_next_tooltip": {
+      "message": "Következő csempe"
+   },
+   "tile_selection_nextrow_tooltip": {
+      "message": "Következő sor"
+   },
+   "tile_selection_previous_tooltip": {
+      "message": "Előző csempe"
+   },
+   "tile_selection_previousrow_tooltip": {
+      "message": "Előző sor"
+   },
+   "tile_thumbnail_bgcolor": {
+      "message": "Háttérszín:"
+   },
+   "tile_thumbnail_remove": {
+      "message": "Eltávolítás"
+   },
+   "tile_title_label": {
+      "message": "Felirat:"
+   },
+   "tile_title_placeholder": {
+      "message": "Adjon meg egy új csempefeliratot"
+   },
+   "tile_title_set": {
+      "message": "Beállítás"
+   },
+   "tile_unpin": {
+      "message": "Rögzítés feloldása"
+   },
+   "tileurl_empty": {
+      "message": "Üres csempe"
+   }
+}
