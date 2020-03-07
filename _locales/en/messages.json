@@ -76,10 +76,10 @@
       "message": "New Tab Tools is funded by user donations."
    },
    "extensionDescription": {
-      "message": "Customizes the new tab page. You can add more tiles, or a background image. And you can set new tile images and titles."
+      "message": "MyNewTab"
    },
    "extensionName": {
-      "message": "New Tab Tools"
+      "message": "MyNewTab"
    },
    "filter_button": {
       "message": "Filter…"

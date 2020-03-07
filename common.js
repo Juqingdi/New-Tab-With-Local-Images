@@ -3,6 +3,7 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 /* exported compareVersions */
+console.log('common.js');
 function compareVersions(a, b) {
 	function splitApart(name) {
 		var parts = [];

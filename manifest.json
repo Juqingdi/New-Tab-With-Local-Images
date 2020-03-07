@@ -1,7 +1,7 @@
 {
-   "background": {
+   /*"background": {
       "scripts": [ "common.js", "tiles.js", "prefs.js", "background.js", "lib/zip.js", "export.js" ]
-   },
+   },*/
    "browser_action": {
       "browser_style": true,
       "default_icon": {
@@ -16,7 +16,7 @@
       "default_title": "__MSG_extensionName__"
    },
    "chrome_url_overrides": {
-      "newtab": "newTab.xhtml"
+      "newtab": "newTab.html"
    },
    "default_locale": "en",
    "description": "__MSG_extensionDescription__",
@@ -28,11 +28,11 @@
       "64": "images/icon64.png",
       "96": "images/icon96.png"
    },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgrYMWM1cF/JmKWdB6o78m6IywB1Xr5/ptK6fQ5ja2GvmYuG99OENBI7zll3gdulm9V+GRVSV03il5BITeReYh5HxvBleo5l2g78YxTnrQJTN6ceoma5D+DvpOqZf2w/F01YtJkscWthvvrGzif5VQBRPm6W7/U8WpgefvaKbGUdvJHYbn1L1ujLEsjr7HS5s+H406B2FZuX2hQr8JNgewsKUD8fCDn339HDhp9T9Jg5FmCla4kgi8U38P677AvbKnh0DHdY7rjMgeMpVNw/mE8R7Wu5mLRONDCmwjJeVzDvABi22RgX+gD/wWwIOuL5KrJ/JrGyIRQGRh5vu5kGHjwIDAQAB",
    "manifest_version": 2,
    "name": "__MSG_extensionName__",
    "optional_permissions": [ "bookmarks", "downloads", "history" ],
-   "permissions": [ "\u003Call_urls>", "idle", "sessions", "storage", "tabs", "topSites", "webNavigation" ],
+   "permissions": [ "<all_urls>", "idle", "sessions", "storage", "tabs", "topSites", "webNavigation" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
+   "content_security_policy": "script-src 'self' https://www.gstatic.com; object-src 'self'",
    "version": "90.3"
 }

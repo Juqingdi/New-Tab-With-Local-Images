@@ -36,7 +36,7 @@
 		"message": "New Tab Tools 依靠用户捐助维持。"
 	},
 	"extensionDescription": {
-		"message": "自定义新标签页。您可以添加更多的磁贴，一个 Firefox 的快速启动栏，以及设置背景图片。您还可以设定新建磁贴的图片和标题。"
+		"message": "MyNewTab"
 	},
 	"filter_button": {
 		"message": "过滤器…"

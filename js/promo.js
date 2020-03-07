@@ -1,0 +1,1 @@
+var promo = {"canOpenPrivilegedLinks":false,"promoHtml":"","promoId":"","promoLogUrl":""};

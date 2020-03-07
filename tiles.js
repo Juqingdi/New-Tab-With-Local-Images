@@ -6,6 +6,8 @@
 /* import-globals-from common.js */
 /* import-globals-from prefs.js */
 
+console.log("tiles.js");
+
 var db;
 
 function initDB() {

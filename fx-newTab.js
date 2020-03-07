@@ -480,6 +480,7 @@ var Grid = {
 
 		// Put sites into the cells.
 		return Tiles.getAllTiles().then(links => {
+			console.log(links);
 			let length = Math.min(links.length, cells.length);
 
 			for (let i = 0; i < length; i++) {

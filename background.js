@@ -5,6 +5,8 @@
 /* import-globals-from export.js */
 /* import-globals-from prefs.js */
 
+console.log("backgrounbd.js");
+
 Promise.all([
 	Prefs.init(),
 	initDB()
