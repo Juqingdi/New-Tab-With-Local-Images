@@ -8,7 +8,7 @@ html {
   --md-fallback-letter-size: 16px;
   --md-favicon-size: 32px;
   --md-icon-margin-bottom: 16px;
-  --md-icon-size: 48px;
+  --md-icon-size: 24px;
   --md-max-tiles-row: 5;
   --md-menu-margin-side: 2px;
   --md-menu-margin-top: 4px;
@@ -156,25 +156,30 @@ body.dark-theme:not(.reordering) .md-tile:active + .md-menu::after {
   z-index: -1;
 }
 
+.md-icon-pad {
+  margin-bottom: var(--md-icon-margin-bottom);
+  padding: 12px;
+  background-color: var(--icon-background-color);
+  border-radius: 50%;
+}
+
 .md-icon {
   align-items: center;
   background-color: var(--icon-background-color);
-  border-radius: 50%;
   display: flex;
   height: var(--md-icon-size);
   justify-content: center;
-  margin-bottom: var(--md-icon-margin-bottom);
   width: var(--md-icon-size);
 }
 
 .md-add-icon {
-  background-image: url(chrome-search://most-visited/add_link.svg);
+  background-image: url(./sources/add_link.svg);
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .use-white-add-icon .md-add-icon {
-  background-image: url(chrome-search://most-visited/add_link_white.svg);
+  background-image: url(./sources/add_link_white.svg);
 }
 
 .md-fallback-letter {
@@ -256,8 +261,8 @@ body:not(.reordering) .md-menu:focus:not(.mouse-navigation) {
   --mask-width: calc(var(--md-menu-size) - 2);
   /* TODO(crbug.com/1012065): Use SVG for the "X" icon. */
   -webkit-mask-image: -webkit-image-set(
-      url(chrome-search://most-visited/dont_show.png) 1x,
-      url(chrome-search://most-visited/dont_show_2x.png) 2x);
+      url(./sources/dont_show.png) 1x,
+      url(./sources/dont_show_2x.png) 2x);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: var(--mask-width);
   background-color: rgb(var(--GG600-rgb));
@@ -283,7 +288,7 @@ body:not(.reordering) .md-menu:focus:not(.mouse-navigation) {
 
 .md-edit-menu::after {
   --mask-width: var(--md-edit-menu-size);
-  -webkit-mask-image: url(chrome-search://most-visited/edit_menu.svg);
+  -webkit-mask-image: url(./sources/edit_menu.svg);
   height: var(--md-edit-menu-size);
   width: var(--md-edit-menu-size);
 }

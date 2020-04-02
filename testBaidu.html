@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>百度搜索</title>
+<link  href="css.css" rel="stylesheet" type="text/css" />
+<script src="https://apps.bdimg.com/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+$(function(){
+    $("#myColors").keyup(function(){        
+        var iVal = $.trim($(this).val());
+        $.ajax({
+            "url":"https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su",
+            "data":{"wd":iVal},
+            "dataType":"jsonp",
+            "jsonp":"cb",
+            "jsonpCallback":"showeeeee",
+        });     
+    });
+    
+    $(document).on("mouseover","#myColors_ul li",function(){
+        $(this).removeClass("mouseOut");
+        $(this).addClass("mouseOver");
+    });
+    $(document).on("mouseout","#myColors_ul li",function(){
+        $(this).removeClass("mouseOver");
+        $(this).addClass("mouseOut");
+    });
+    $(document).on("click","#myColors_ul li",function(){
+        var bgColor = $(this).text();
+        $("#myColors").val(bgColor);
+        $("#popup").addClass("hide");
+        $("#myColors_ul").html('');
+        $("body").css("background",bgColor);
+    });
+});
+
+
+function showeeeee(result){
+    var iVal = $.trim($("#myColors").val());
+    var data = result.s;
+    $("#popup").addClass("hide");
+    $("#myColors_ul").html('');
+    var str = '';
+    if(data.length>0){
+        $.each(data,function(index,arrVal){
+            str += "<li>"+arrVal+"</li>";
+            if(iVal!='' && str!=''){
+                $("#popup").removeClass("hide");
+                $("#popup").addClass("show");
+                $("#myColors_ul").html(str);
+            }else{
+                $("body").css("background","#fff");
+            }
+        });
+    }
+    
+}
+
+
+</script>
+</head>
+<body>
+    <form method="post" name="myForm1">
+        搜索: <input type="text" name="colors" id="myColors"/>
+    </form>
+    <div id="popup">
+        <ul id="myColors_ul">
+        </ul>
+    </div>
+</body>
+</html>
