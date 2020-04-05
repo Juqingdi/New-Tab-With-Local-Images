@@ -1,4 +1,9 @@
-window.onload = ()=>{
+document.addEventListener('DOMContentLoaded', () => {
+	console.log('DOMContentLoaded');
+	loadTopSites();
+});
+
+function loadTopSites() {
 	chrome.topSites.get((topSites)=>{
 		console.log(topSites);
 		let mvTiles = document.getElementById('mv-tiles');
@@ -28,3 +33,17 @@ window.onload = ()=>{
 		}
 	});
 }
+
+function fadeInBackground() {
+	let preloadBg = document.querySelector('link[rel="preload"]');
+	const image = new Image();
+	image.onload = () => {
+		console.log('preload loaded');
+		var customBg = document.getElementById('custom-bg');
+		customBg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url(${preloadBg.href})`;
+		customBg.style.opacity = 1;
+	};
+	image.src = preloadBg.href;
+}
+
+fadeInBackground();
