@@ -33,6 +33,6 @@
    "optional_permissions": [ "bookmarks", "downloads", "history" ],
    "permissions": [ "<all_urls>", "idle", "sessions", "storage", "tabs", "topSites", "webNavigation" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "content_security_policy": "script-src 'self' https://www.gstatic.com; object-src 'self'",
+   "content_security_policy": "script-src 'self' https://sp0.baidu.com; object-src 'self'",
    "version": "90.3"
 }

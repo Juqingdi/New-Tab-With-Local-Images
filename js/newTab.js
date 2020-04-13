@@ -1,6 +1,12 @@
+let search_baidu = null,
+	bdsug = null,
+	bdsug_ul = null,
+	baidu_input = null;
+
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('DOMContentLoaded');
 	loadTopSites();
+	associate();
 });
 
 function loadTopSites() {
@@ -44,6 +50,64 @@ function fadeInBackground() {
 		customBg.style.opacity = 1;
 	};
 	image.src = preloadBg.href;
+}
+
+function associate() {
+	if(search_baidu === null){
+		search_baidu = document.getElementById('search-baidu');
+		bdsug = search_baidu.querySelector('.bdsug');
+		bdsug_ul = bdsug.querySelector('ul');
+		baidu_input = search_baidu.querySelector('input[name="wd"]');
+	}
+	baidu_input.oninput = e => {
+		var value = e.target.value.trim();
+		if(value.length > 0){
+			var script = document.createElement('script');
+			script.src = `https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${value}&cb=soso`;
+			document.body.appendChild(script);
+			script.remove();
+			bdsug.style.display = '';
+		}
+		else{
+			bdsug.style.display = 'none';
+		}
+	}
+	baidu_input.onblur = e => {
+		bdsug.style.display = 'none';
+	}
+	baidu_input.onfocus = e => {
+		if(baidu_input.value !== ''){
+			bdsug.style.display = '';
+		}
+	}
+}
+
+function soso(data) {
+	var keys = data.s;
+	bdsug_ul.innerHTML = '';
+	keys.forEach(key => {
+		let li = document.createElement('li');
+		li.class = 'bdsug-overflow';
+
+		let strArr = key.split(baidu_input.value);
+		if(strArr.length > 1){
+			for (var i = strArr.length - 1; i >= 0; i--) {
+				if(strArr[i].length > 0){
+					strArr[i] = strArr[i].bold();
+				}
+			}
+			li.innerHTML = strArr.join(baidu_input.value);
+		}
+		else{
+			li.innerText = key;
+		}
+
+		li.onmousedown = () => {
+			baidu_input.value = key;
+			search_baidu.submit();
+		}
+		bdsug_ul.appendChild(li);
+	});
 }
 
 fadeInBackground();
