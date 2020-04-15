@@ -14,11 +14,11 @@ function loadTopSites() {
 		console.log(topSites);
 		let mvTiles = document.getElementById('mv-tiles');
 		let template = document.getElementById('productTopSite');
-		let gridTileContainer = template.content.querySelectorAll('.grid-tile-container')[0];
-		let mdTile = template.content.querySelectorAll('.md-tile')[0];
-		let mdIcon = template.content.querySelectorAll('.md-icon')[0];
-		let mdTitleSpan = template.content.querySelectorAll('.md-title span')[0];
-		let mdEditMenu = template.content.querySelectorAll('button.md-edit-menu')[0];
+		let gridTileContainer = template.content.querySelector('.grid-tile-container');
+		let mdTile = template.content.querySelector('.md-tile');
+		let mdIcon = template.content.querySelector('.md-icon');
+		let mdTitleSpan = template.content.querySelector('.md-title span');
+		let mdEditMenu = template.content.querySelector('button.md-edit-menu');
 
 		let topSite;
 		for (let i = topSites.length - 1; i >= 0; i--) {
@@ -37,6 +37,7 @@ function loadTopSites() {
 			let clone = document.importNode(template.content, true);
 			mvTiles.appendChild(clone);
 		}
+		document.getElementById('mv-tiles').style.opacity = 1;
 	});
 }
 
@@ -45,7 +46,7 @@ function fadeInBackground() {
 	const image = new Image();
 	image.onload = () => {
 		console.log('preload loaded');
-		var customBg = document.getElementById('custom-bg');
+		let customBg = document.getElementById('custom-bg');
 		customBg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url(${preloadBg.href})`;
 		customBg.style.opacity = 1;
 	};
@@ -60,9 +61,9 @@ function associate() {
 		baidu_input = search_baidu.querySelector('input[name="wd"]');
 	}
 	baidu_input.oninput = e => {
-		var value = e.target.value.trim();
+		let value = e.target.value.trim();
 		if(value.length > 0){
-			var script = document.createElement('script');
+			let script = document.createElement('script');
 			script.src = `https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${value}&cb=soso`;
 			document.body.appendChild(script);
 			script.remove();
@@ -83,7 +84,7 @@ function associate() {
 }
 
 function soso(data) {
-	var keys = data.s;
+	let keys = data.s;
 	bdsug_ul.innerHTML = '';
 	keys.forEach(key => {
 		let li = document.createElement('li');
@@ -91,7 +92,7 @@ function soso(data) {
 
 		let strArr = key.split(baidu_input.value);
 		if(strArr.length > 1){
-			for (var i = strArr.length - 1; i >= 0; i--) {
+			for (let i = strArr.length - 1; i >= 0; i--) {
 				if(strArr[i].length > 0){
 					strArr[i] = strArr[i].bold();
 				}
