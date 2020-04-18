@@ -2,6 +2,10 @@ let search_baidu = null,
 	bdsug = null,
 	bdsug_ul = null,
 	baidu_input = null;
+let focusedLiIndex = null;
+let totalLi = 0;
+let searchWord = '';
+let enableBlur = true;
 
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('DOMContentLoaded');
@@ -61,10 +65,10 @@ function associate() {
 		baidu_input = search_baidu.querySelector('input[name="wd"]');
 	}
 	baidu_input.oninput = e => {
-		let value = e.target.value.trim();
-		if(value.length > 0){
+		searchWord = e.target.value;
+		if(searchWord.length > 0){
 			let script = document.createElement('script');
-			script.src = `https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${value}&cb=soso`;
+			script.src = `https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${searchWord}&cb=soso`;
 			document.body.appendChild(script);
 			script.remove();
 			bdsug.style.display = '';
@@ -74,41 +78,103 @@ function associate() {
 		}
 	}
 	baidu_input.onblur = e => {
-		bdsug.style.display = 'none';
+		if(enableBlur){
+			bdsug.style.display = 'none';
+			focusedLiIndex = null;
+			liFocusAt(focusedLiIndex);
+		}
 	}
 	baidu_input.onfocus = e => {
 		if(baidu_input.value !== ''){
 			bdsug.style.display = '';
 		}
 	}
+	baidu_input.onkeydown = e => {
+		if(bdsug_ul.style.display === 'none' || totalLi === 0)
+			return;
+
+		switch(e.key) {
+			case 'ArrowDown':
+				focusedLiIndex = (focusedLiIndex === null) ? 0 : (focusedLiIndex + 1);
+				if(focusedLiIndex === totalLi)
+					focusedLiIndex = null;
+				liFocusAt(focusedLiIndex);
+				break;
+			case 'ArrowUp':
+				focusedLiIndex = (focusedLiIndex === null) ? (totalLi - 1) : (focusedLiIndex - 1);
+				if(focusedLiIndex < 0)
+					focusedLiIndex = null;
+				liFocusAt(focusedLiIndex);
+				break;
+			case 'Escape':
+				baidu_input.blur();
+				break;
+		}
+	}
+	bdsug_ul.onmouseenter = () => {
+		enableBlur = false;
+	}
+	bdsug_ul.onmouseleave = () => {
+		enableBlur = true;
+	}
 }
 
 function soso(data) {
 	let keys = data.s;
 	bdsug_ul.innerHTML = '';
-	keys.forEach(key => {
+	totalLi = 0;
+	keys.forEach((key, index) => {
 		let li = document.createElement('li');
 		li.class = 'bdsug-overflow';
 
-		let strArr = key.split(baidu_input.value);
+		let strArr = key.split(searchWord.trim());
 		if(strArr.length > 1){
 			for (let i = strArr.length - 1; i >= 0; i--) {
 				if(strArr[i].length > 0){
 					strArr[i] = strArr[i].bold();
 				}
 			}
-			li.innerHTML = strArr.join(baidu_input.value);
+			li.innerHTML = strArr.join(searchWord.trim());
 		}
 		else{
 			li.innerText = key;
 		}
 
-		li.onmousedown = () => {
+		li.onclick = () => {
 			baidu_input.value = key;
 			search_baidu.submit();
 		}
+		li.onmouseenter = () => {
+			focusedLiIndex = index;
+			liFocusAt(focusedLiIndex);
+		}
+		li.onmouseleave = () => {
+			focusedLiIndex = null;
+			liFocusAt(focusedLiIndex);
+		}
 		bdsug_ul.appendChild(li);
+		totalLi++;
 	});
+	focusedLiIndex = null;
+	liFocusAt(focusedLiIndex);
+}
+
+function liFocusAt(index) {
+	if(bdsug_ul.innerHTML === '')
+		return;
+
+	let focusedLi = bdsug_ul.querySelector('li.bdsug-s');
+	if(focusedLi !== null)
+		focusedLi.classList.remove('bdsug-s');
+
+	if(index !== null){
+		focusedLi = bdsug_ul.querySelectorAll('li')[index];
+		focusedLi.classList.add('bdsug-s');
+		baidu_input.value = focusedLi.innerText;
+	}
+	else{
+		baidu_input.value = searchWord;
+	}
 }
 
 fadeInBackground();
