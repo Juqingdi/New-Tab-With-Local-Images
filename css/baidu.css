@@ -11,16 +11,22 @@ html{
     left: calc(50% - 272px/2);
     position: absolute;
     width: 272px;
+    background: url('../images/baidu.svg') no-repeat;
+    background-size: 100%;
+    transition: background 700ms;
+}
+#logo-baidu.skin {
     background: var(--logo-color);
-    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
     -webkit-mask-image: url('../images/baidu.svg');
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100%;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 }
 #search-baidu {
 	position: relative;
 	text-align: left;
 	/*width: 640px;*/
+    transition: opacity 350ms ease-in-out;
 }
 #search-baidu *{
     box-sizing: content-box;
@@ -31,9 +37,9 @@ html{
 #search-baidu input[type="text"]{
     position: relative;
 	float: right;
-	padding: 6px 7px;
-    width: 540px;
-    height: 36px;
+    padding: 10px 9px 10px 7px;
+    width: 520px;
+    height: 18px;
     border: 1px solid #b6b6b6;
     background: #fff;
     display: inline-block;
@@ -43,16 +49,13 @@ html{
     border-color: #b8b8b8 transparent #ccc #b8b8b8;
     overflow: hidden;
     outline: none;
-    font: 16px/18px arial;
-    line-height: 22px;
+    font: 16px arial;
+    line-height: 20px;
 }
 #search-baidu.skin input[type="text"]{
     width: 521px;
     height: 20px;
     border: none;
-    line-height: 20px;
-    padding: 10px 9px 10px 7px;
-    font: 16px arial;
     box-shadow: 0 1px 3px rgba(0,0,0,.2);
 }
 #search-baidu input[type="text"]:focus{
@@ -63,17 +66,18 @@ html{
 	float: right;
     border: 0;
     padding: 0;
-	width: 100px;
-    height: 36px;
+    width: 104px;
+    height: 39px;
     cursor: pointer;
     color: #fff;
-    font-size: 15px;
+    font: 16px arial;
     letter-spacing: 1px;
     background: #3385ff;
     border-bottom: 1px solid #2d78f4;
     outline: medium;
     -webkit-appearance: none;
     border-radius: 0;
+    background-position: -206px 0;
 }
 #search-baidu.skin input[type="submit"]{
     width: 104px;
@@ -81,11 +85,8 @@ html{
     line-height: 40px;
     color: #000;
     border: none;
-    font-size: 16px;
     background-image: url(https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/skin_dark-48fa9dbf5c.png);
-    background-position: -206px 0;
     box-shadow: 1px 1px 3px rgba(0,0,0,.2);
-    font-family: arial;
 }
 #search-baidu .bdsug{
     /* display: none; */

@@ -6,11 +6,16 @@ let focusedLiIndex = null;
 let totalLi = 0;
 let searchWord = '';
 let enableBlur = true;
+let bgLoaded = false,
+	domLoaded = false;
 
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('DOMContentLoaded');
 	loadTopSites();
 	associate();
+	domLoaded = true;
+	console.log('dom loaded');
+	toggleClass();
 });
 
 function loadTopSites() {
@@ -49,10 +54,12 @@ function fadeInBackground() {
 	let preloadBg = document.querySelector('link[rel="preload"]');
 	const image = new Image();
 	image.onload = () => {
-		console.log('preload loaded');
 		let customBg = document.getElementById('custom-bg');
 		customBg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url(${preloadBg.href})`;
 		customBg.style.opacity = 1;
+		bgLoaded = true;
+		console.log('bg loaded');
+		toggleClass();
 	};
 	image.src = preloadBg.href;
 }
@@ -174,6 +181,20 @@ function liFocusAt(index) {
 	}
 	else{
 		baidu_input.value = searchWord;
+	}
+}
+
+function toggleClass() {
+	if(bgLoaded && domLoaded){
+		// alert('toggle');
+		// document.getElementById('logo-baidu').style.transition = 'background-color 700ms';
+		// document.getElementById('logo-baidu').style.backgroundColor = '#eee';
+		search_baidu.style.opacity = 0;
+		document.getElementById('logo-baidu').classList.add('skin');
+		setTimeout(() => {
+			search_baidu.classList.add('skin');
+			search_baidu.style.opacity = 1;
+		}, 350);
 	}
 }
 
