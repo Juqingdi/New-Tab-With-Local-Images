@@ -13,20 +13,36 @@ html{
     width: 272px;
     background: url('../images/baidu.svg') no-repeat;
     background-size: 100%;
-    transition: background 700ms;
+    opacity: 0;
+    transition: opacity 300ms, background 700ms;
+}
+#logo-baidu.dom-loaded {
+    opacity: 1;
+}
+#logo-baidu.bg-loaded {
+    opacity: 0.7;
+    background: var(--logo-color);
 }
 #logo-baidu.skin {
-    background: var(--logo-color);
+    background: #d6d6d6;
+    /*background: var(--logo-color);*/
     -webkit-mask-image: url('../images/baidu.svg');
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100%;
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
 }
+#logo-baidu:hover{
+    opacity: 1 !important;
+}
 #search-baidu {
 	position: relative;
 	text-align: left;
 	/*width: 640px;*/
-    transition: opacity 350ms ease-in-out;
+    opacity: 0.8;
+    /*transition: opacity 350ms ease-in-out;*/
+}
+#search-baidu:hover, #search-baidu:focus-within{
+    opacity: 1;
 }
 #search-baidu *{
     box-sizing: content-box;

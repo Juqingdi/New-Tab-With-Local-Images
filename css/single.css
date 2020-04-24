@@ -161,6 +161,10 @@ body.dark-theme:not(.reordering) .md-tile:active + .md-menu::after {
   padding: 12px;
   background-color: var(--icon-background-color);
   border-radius: 50%;
+  opacity: 0.8;
+}
+#mv-tiles:hover .md-icon-pad{
+  opacity: 1;
 }
 
 .md-icon {
