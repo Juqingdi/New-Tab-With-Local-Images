@@ -5,12 +5,13 @@ let search_baidu = null,
 let focusedLiIndex = null;
 let totalLi = 0;
 let searchWord = '';
-let enableBlur = true;
+let enableBlur = true,
+	inputFocused = false;
 
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('DOMContentLoaded');
 	loadTopSites();
-	associate();
+	initSearchBox();
 	setTimeout(() => {
 		document.getElementById('logo-baidu').classList.add('dom-loaded');
 	}, 0);
@@ -62,7 +63,7 @@ function fadeInBackground() {
 	image.src = preloadBg.href;
 }
 
-function associate() {
+function initSearchBox() {
 	if(search_baidu === null){
 		search_baidu = document.getElementById('search-baidu');
 		bdsug = search_baidu.querySelector('.bdsug');
@@ -76,23 +77,20 @@ function associate() {
 			script.src = `https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${searchWord}&cb=soso`;
 			document.body.appendChild(script);
 			script.remove();
-			bdsug.style.display = '';
 		}
-		else{
-			bdsug.style.display = 'none';
-		}
+		showOrHideBdsug();
 	}
 	baidu_input.onblur = e => {
 		if(enableBlur){
-			bdsug.style.display = 'none';
+			inputFocused = false;
+			showOrHideBdsug();
 			focusedLiIndex = null;
 			liFocusAt(focusedLiIndex);
 		}
 	}
 	baidu_input.onfocus = e => {
-		if(baidu_input.value !== ''){
-			bdsug.style.display = '';
-		}
+		inputFocused = true;
+		showOrHideBdsug();
 	}
 	baidu_input.onkeydown = e => {
 		if(bdsug_ul.style.display === 'none' || totalLi === 0)
@@ -115,6 +113,10 @@ function associate() {
 				baidu_input.blur();
 				break;
 		}
+	}
+	search_baidu.onsubmit = (e) => {
+		if(baidu_input.value.trim() === '')
+			return false;
 	}
 	bdsug_ul.onmouseenter = () => {
 		enableBlur = false;
@@ -162,6 +164,7 @@ function soso(data) {
 	});
 	focusedLiIndex = null;
 	liFocusAt(focusedLiIndex);
+	showOrHideBdsug();
 }
 
 function liFocusAt(index) {
@@ -180,6 +183,13 @@ function liFocusAt(index) {
 	else{
 		baidu_input.value = searchWord;
 	}
+}
+
+function showOrHideBdsug() {
+	if(inputFocused && baidu_input.value.trim() && bdsug_ul.innerHTML !== '')
+		bdsug.style.display = '';
+	else
+		bdsug.style.display = 'none';1
 }
 
 fadeInBackground();
