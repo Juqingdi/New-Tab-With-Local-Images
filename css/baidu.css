@@ -25,7 +25,6 @@ html{
 }
 #logo-baidu.skin {
     background: #d6d6d6;
-    /*background: var(--logo-color);*/
     -webkit-mask-image: url('../images/baidu.svg');
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100%;
@@ -37,9 +36,7 @@ html{
 #search-baidu {
 	position: relative;
 	text-align: left;
-	/*width: 640px;*/
     opacity: 0.8;
-    /*transition: opacity 350ms ease-in-out;*/
 }
 #search-baidu:hover, #search-baidu:focus-within{
     opacity: 1;
@@ -105,7 +102,6 @@ html{
     box-shadow: 1px 1px 3px rgba(0,0,0,.2);
 }
 #search-baidu .bdsug{
-    /* display: none; */
     position: absolute;
     width: 535px;
     height: auto;

@@ -1,18 +1,13 @@
 {
-   /*"background": {
-      "scripts": [ "common.js", "tiles.js", "prefs.js", "background.js", "lib/zip.js", "export.js" ]
-   },*/
    "browser_action": {
-      "browser_style": true,
       "default_icon": {
-         "16": "images/tools-light16.png",
-         "24": "images/tools-light24.png",
-         "32": "images/tools-light32.png",
-         "48": "images/tools-light48.png",
-         "64": "images/tools-light64.png",
-         "96": "images/tools-light96.png"
+         "16": "images/icon16.png",
+         "24": "images/icon24.png",
+         "32": "images/icon32.png",
+         "48": "images/icon48.png",
+         "64": "images/icon64.png",
+         "96": "images/icon96.png"
       },
-      "default_popup": "action.html",
       "default_title": "__MSG_extensionName__"
    },
    "chrome_url_overrides": {
@@ -31,8 +26,7 @@
    "manifest_version": 2,
    "name": "__MSG_extensionName__",
    "optional_permissions": [ "bookmarks", "downloads", "history" ],
-   "permissions": [ "<all_urls>", "idle", "sessions", "storage", "tabs", "topSites", "webNavigation" ],
-   "update_url": "https://clients2.google.com/service/update2/crx",
+   "permissions": [ "<all_urls>", "tabs", "topSites" ],
    "content_security_policy": "script-src 'self' https://sp0.baidu.com; object-src 'self'",
-   "version": "90.3"
+   "version": "1.0.0"
 }

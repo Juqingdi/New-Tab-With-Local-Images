@@ -9,7 +9,7 @@ let enableBlur = true,
 	inputFocused = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-	console.log('DOMContentLoaded');
+	fadeInBackground();
 	loadTopSites();
 	initSearchBox();
 	setTimeout(() => {
@@ -19,14 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function loadTopSites() {
 	chrome.topSites.get((topSites)=>{
-		console.log(topSites);
 		let mvTiles = document.getElementById('mv-tiles');
 		let template = document.getElementById('productTopSite');
 		let gridTileContainer = template.content.querySelector('.grid-tile-container');
 		let mdTile = template.content.querySelector('.md-tile');
 		let mdIcon = template.content.querySelector('.md-icon');
 		let mdTitleSpan = template.content.querySelector('.md-title span');
-		let mdEditMenu = template.content.querySelector('button.md-edit-menu');
 
 		let topSite;
 		for (let i = topSites.length - 1; i >= 0; i--) {
@@ -41,7 +39,6 @@ function loadTopSites() {
 			mdTile.dataPos = i;
 			mdIcon.src = `chrome://favicon/size/16@2x/${topSite.url}`;
 			mdTitleSpan.innerText = topSite.title;
-			mdEditMenu.ariaLabel = `修改快捷方式 ${topSite.title}`;
 			let clone = document.importNode(template.content, true);
 			mvTiles.appendChild(clone);
 		}
@@ -53,7 +50,6 @@ function fadeInBackground() {
 	let preloadBg = document.querySelector('link[rel="preload"]');
 	const image = new Image();
 	image.onload = () => {
-		console.log('bg loaded');
 		let customBg = document.getElementById('custom-bg');
 		customBg.style.backgroundImage = `url(${preloadBg.href})`;
 		customBg.style.opacity = 1;
@@ -191,5 +187,3 @@ function showOrHideBdsug() {
 	else
 		bdsug.style.display = 'none';1
 }
-
-fadeInBackground();
