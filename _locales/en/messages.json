@@ -1,9 +1,9 @@
 {
    "extensionName": {
-      "message": "MyNewTab"
+      "message": "New Tab With Local Images"
    },
    "extensionDescription": {
-      "message": "MyNewTab"
+      "message": "A new tab extension which can display images on your local PC."
    }
 
 }

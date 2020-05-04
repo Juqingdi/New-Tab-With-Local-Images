@@ -1,6 +1,9 @@
 {
-	"extensionDescription": {
-		"message": "我的新建标签页"
-	}
+   "extensionName": {
+      "message": "新标签页-本地图片"
+   },
+   "extensionDescription": {
+      "message": "一个可以显示本地图片的新标签页扩展"
+   }
 
 }
